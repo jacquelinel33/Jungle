@@ -29,7 +29,6 @@ RSpec.describe Product, type: :model do
     it 'should not validate if price is nil' do
       @product.price_cents = nil
       @product.save
-      puts @product.inspect
       expect(@product).to_not be_valid
       expect(@product.errors.full_messages).not_to be_empty
     end
@@ -40,5 +39,6 @@ RSpec.describe Product, type: :model do
       expect(@product).to_not be_valid
       expect(@product.errors.full_messages).not_to be_empty
     end
+
   end
 end
